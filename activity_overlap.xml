@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Overlap">
+    <View
+        android:id="@+id/edView"
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        android:background="@drawable/solo1"
+        />
+
+    <ImageView
+        android:id="@+id/edImg"
+        android:layout_width="200sp"
+        android:layout_height="100sp"
+        android:layout_below="@id/edView"
+        android:scaleType="fitXY"
+        android:layout_centerInParent="true"
+        android:src="@drawable/solo1"
+        android:layout_marginTop="-60sp"
+
+        />
+</RelativeLayout>
