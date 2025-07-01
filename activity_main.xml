@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-
     android:orientation="vertical"
    >
 
@@ -48,14 +47,15 @@
         android:layout_marginEnd="30sp"
         android:layout_marginStart="30sp"
         android:hint="Enter your password"/>
-    <TextView
-        android:id="@+id/edForgotPassword"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/Confirm"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Enter your password again"
+        android:layout_marginStart="30sp"
+        android:minEms="6"
         android:layout_marginEnd="30sp"
-        android:layout_gravity="end"
-        android:text="forgot password?"
-        android:textColor="@color/blue"/>
+        android:layout_marginTop="20sp"/>
     <Button
         android:id="@+id/butnChk"
         android:layout_width="match_parent"

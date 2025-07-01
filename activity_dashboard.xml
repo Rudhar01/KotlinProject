@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Dashboard">
+    <View
+        android:id="@+id/View1"
+        android:layout_width="match_parent"
+        android:layout_height="150sp"
+        android:background="@drawable/img_3"/>
+
+    <ImageView
+        android:id="@+id/View2"
+        android:layout_below="@id/View1"
+        android:layout_marginTop="-60sp"
+        android:layout_width="100sp"
+        android:layout_centerHorizontal="true"
+        android:scaleType="fitXY"
+        android:layout_height="100sp"
+        android:src="@drawable/img_1"/>
+
+    <TextView
+        android:layout_below="@id/View2"
+        android:id="@+id/Profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:textSize="40sp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20sp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:id="@+id/Name"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="40sp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Name : "
+        android:layout_below="@id/Profile"
+        />
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="40sp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Email : "
+        android:layout_marginTop="20sp"
+        android:layout_below="@id/Name"
+        />
+
+    <Button
+        android:id="@+id/Edit"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="20sp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Edit"
+        android:layout_marginTop="20sp"
+        android:layout_below="@id/email"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:id="@+id/Name1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/Name"
+        android:layout_below="@id/Profile"
+        android:textSize="20sp"
+        />
+    <TextView
+        android:id="@+id/email1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/email"
+        android:layout_below="@id/Name"
+        android:layout_marginTop="20sp"
+        android:textSize="20sp"
+        />
+
+
+</RelativeLayout>

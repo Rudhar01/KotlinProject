@@ -19,13 +19,12 @@
         android:textStyle="bold"
         android:layout_marginTop="140sp"/>
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="150sp"
-        android:layout_marginTop="200sp"
-        android:layout_marginBottom="230sp"
+        android:layout_centerInParent="true"
         android:background="@color/white"
+        android:padding="10dp"
         >
     <TextView
         android:id="@+id/User"
@@ -45,7 +44,10 @@
         android:layout_height="wrap_content"
         android:hint="Enter your name"
         android:layout_marginStart="40sp"
+        android:inputType="textEmailAddress"
         android:background="@color/offWhite"
+        android:maxLines="1"
+        android:imeOptions="actionNext"
         android:layout_marginEnd="40sp"
         android:layout_below="@+id/User"
         android:layout_marginTop="10sp"
@@ -57,6 +59,7 @@
         android:layout_height="wrap_content"
         android:text="Password"
         android:textColor="@color/blue"
+        android:imeOptions=""
         android:textStyle="bold"
         android:textSize="30sp"
         android:layout_below="@+id/EnterName"
@@ -72,16 +75,47 @@
         android:background="@color/offWhite"
         android:layout_marginStart="40sp"
         android:layout_marginEnd="40sp"
+        android:inputType="numberPassword"
+        android:imeOptions="actionDone"
         android:layout_below="@+id/Pass"
         android:layout_marginTop="10sp"
         android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/Forgot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgot password?"
+            android:textColor="@color/blue"
+            android:layout_below="@+id/EnterPass"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10sp"
+            />
         <Button
             android:id="@+id/ButtonIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Log In"
-            android:layout_below="@+id/EnterPass"
+            android:layout_below="@+id/Forgot"
             android:layout_marginTop="20sp"
             android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/DontHave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't have an account? "
+            android:textSize="15sp"
+            android:layout_below="@+id/ButtonIn"
+            android:layout_marginStart="20sp"
+            />
+        <TextView
+            android:id="@+id/sign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:textColor="@color/blue"
+            android:layout_below="@+id/ButtonIn"
+            android:layout_toEndOf="@+id/DontHave"
+            android:textSize="15sp"
+            />
 </RelativeLayout>
 </RelativeLayout>

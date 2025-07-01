@@ -13,6 +13,8 @@ class SignIn : AppCompatActivity() {
     lateinit var  name : TextView
     lateinit var pass : TextView
     lateinit var button : Button
+    lateinit var forgot : TextView
+    lateinit var Sign : TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -25,8 +27,20 @@ class SignIn : AppCompatActivity() {
         name=findViewById(R.id.EnterName)
         pass=findViewById(R.id.EnterPass)
         button=findViewById(R.id.ButtonIn)
+        forgot=findViewById(R.id.Forgot)
+        Sign=findViewById(R.id.sign)
+        Sign.setOnClickListener{
+            var intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+            this.finish()
+        }
         button.setOnClickListener{
 
+        }
+        forgot.setOnClickListener {
+            var intent1 = Intent(this, ForgotPassword::class.java)
+            startActivity(intent1)
+            this.finish()
         }
     }
 }

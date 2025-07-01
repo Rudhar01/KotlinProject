@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateNewAccount">
+
+    <TextView
+        android:id="@+id/Create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create an Account"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="20sp"/>
+
+    <TextView
+        android:id="@+id/FullName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Full Name"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@id/Create"
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="20sp"
+        />
+
+    <EditText
+        android:id="@+id/First"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="First Name"
+        android:layout_below="@+id/FullName"
+        android:layout_marginStart="20sp"
+        />
+
+    <EditText
+        android:id="@+id/Middle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Middle Name"
+        android:layout_below="@+id/First"
+        android:layout_marginStart="20sp"
+        />
+
+    <EditText
+        android:id="@+id/Last"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Last Name"
+        android:layout_below="@+id/Middle"
+        android:layout_marginStart="20sp"
+        />
+
+    <TextView
+        android:id="@+id/E_mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="E-mail"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@id/Last"
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="20sp"
+        />
+
+    <EditText
+        android:id="@+id/Mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter your E-Mail"
+        android:layout_below="@+id/E_mail"
+        android:layout_marginStart="20sp"
+        />
+
+    <TextView
+        android:id="@+id/BirthDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Birth Date"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@id/Mail"
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="20sp"
+        />
+
+    <EditText
+        android:id="@+id/Dob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="MM/DD/YYYY"
+        android:layout_below="@+id/BirthDate"
+        android:layout_marginStart="20sp"
+        android:textSize="15sp"
+        />
+
+
+    <TextView
+        android:id="@+id/UserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginStart="20sp"
+        android:layout_below="@+id/Dob"
+        android:layout_marginTop="20sp"/>
+
+    <EditText
+        android:id="@+id/EnterUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter your Username"
+        android:layout_marginStart="20sp"
+        android:layout_below="@+id/UserName"/>
+
+    <TextView
+        android:id="@+id/Password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="20sp"
+        android:layout_below="@+id/EnterUserName"
+        />
+
+    <EditText
+        android:id="@+id/EnterPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter your Username"
+        android:layout_marginStart="20sp"
+        android:layout_below="@+id/Password"/>
+
+    <TextView
+        android:id="@+id/ConfirmPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirm password"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="20sp"
+        android:layout_below="@+id/EnterPassword"
+        />
+
+    <EditText
+        android:id="@+id/EnterConfirmPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter your password again"
+        android:layout_marginStart="20sp"
+        android:layout_below="@+id/ConfirmPassword"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:layout_below="@+id/EnterConfirmPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20sp"
+        />
+</RelativeLayout>

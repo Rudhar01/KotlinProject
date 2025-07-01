@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VerifyOTP">
+
+    <TextView
+        android:id="@+id/VerifyOTP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verify OTP"
+        android:textColor="@color/blue"
+        android:textStyle="bold"
+        android:textSize="40sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20sp"/>
+
+    <TextView
+        android:id="@+id/EnterOTP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        android:textSize="20sp"
+        android:layout_below="@+id/VerifyOTP"
+        android:layout_marginStart="30sp"
+        android:layout_marginTop="20sp"
+        android:layout_marginEnd="30sp"
+        />
+
+    <EditText
+        android:id="@+id/Num1"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_below="@+id/EnterOTP"
+        android:layout_marginStart="50sp"
+        android:layout_marginTop="30sp"
+        android:maxLength="1"
+        android:textAlignment="center"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/Num2"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_below="@+id/EnterOTP"
+        android:layout_toEndOf="@+id/Num1"
+        android:layout_marginStart="30sp"
+        android:layout_marginTop="30sp"
+        android:maxLength="1"
+        android:textAlignment="center"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/Num3"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_below="@+id/EnterOTP"
+        android:layout_toEndOf="@+id/Num2"
+        android:layout_marginStart="30sp"
+        android:textAlignment="center"
+        android:layout_marginTop="30sp"
+        android:maxLength="1"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/Num4"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_below="@+id/EnterOTP"
+        android:layout_toEndOf="@+id/Num3"
+        android:layout_marginStart="30sp"
+        android:layout_marginTop="30sp"
+        android:maxLength="1"
+        android:textAlignment="center"
+        android:inputType="number"/>
+
+    <Button
+        android:id="@+id/Verify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verify"
+        android:textSize="20sp"
+        android:layout_below="@+id/Num1"
+        android:layout_marginTop="20sp"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>

@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
@@ -15,11 +16,11 @@ class MainActivity : AppCompatActivity() {
     lateinit var email: EditText
     lateinit var password: EditText
     lateinit var button: Button
-    lateinit var forgotPassword: TextView
     lateinit var signIn: TextView
     lateinit var name1: TextView
     lateinit var email1: TextView
     lateinit var password1: TextView
+    lateinit var confirm : EditText
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -35,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         email = findViewById(R.id.eid1)
         password = findViewById(R.id.eid2)
         button = findViewById(R.id.butnChk)
-        forgotPassword = findViewById(R.id.edForgotPassword)
+        confirm=findViewById(R.id.Confirm)
         signIn = findViewById(R.id.edSignIn)
 //        name1=findViewById(R.id.edName)
 //        email1=findViewById(R.id.edEmail)
@@ -48,27 +49,30 @@ class MainActivity : AppCompatActivity() {
                 email.error = ("Enter your email")
             } else if (password.text.isEmpty()) {
                 password.error = ("Enter your password")
-            } else {
+            } else if(confirm.text.isEmpty()){
+                confirm.error="Enter your password again"
+            }else if(!confirm.text.toString().equals(password.text.toString())){
+                confirm.error = "Password doesn't match"
+            }else {
+                    var bundle = bundleOf("Msg" to  name.text.toString())
+                    var bundle1 = bundleOf("Email" to email.text.toString())
+                    var intent = Intent(this, Dashboard::class.java)
+                    intent.putExtras(bundle)
+                    intent.putExtras(bundle1)
+//                intent.putExtra("Msg", name.text.toString())
+//                intent.putExtra("Mail", email.text.toString())
+                    startActivity(intent)
+                    this.finish()
+                }
+
+        }
+            signIn.setOnClickListener {
                 var intent2 = Intent(this, SignIn::class.java)
                 startActivity(intent2)
-                }
-//                var intent = Intent(this, Dashboard::class.java)
-//                var str = name.text.toString()
-//                var str1 = email.text.toString()
-//                intent.putExtra("Msg", str)
-//                intent.putExtra("Mail", str1)
-//                startActivity(intent)
-//                this.finish()
-            }
-//            signIn.setOnClickListener {
-//                var intent2 = Intent(this, SignIn::class.java)
-//                startActivity(intent2)
-//            }
-            forgotPassword.setOnClickListener {
-                var intent1 = Intent(this, ForgotPassword::class.java)
-                startActivity(intent1)
                 this.finish()
             }
 
+
         }
     }
+
