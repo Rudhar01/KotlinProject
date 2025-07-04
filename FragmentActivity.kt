@@ -1,36 +1,25 @@
-package com.example.kotlinproject
+package com.example.kotlinproject.Fragments
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.kotlinproject.databinding.ActivityFragmentBinding
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import com.example.kotlinproject.R
 
 class FragmentActivity : AppCompatActivity() {
-    lateinit var binding: ActivityFragmentBinding
-    lateinit var clickInterface: clickInterface
+    lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityFragmentBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_fragment2)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        binding.btnRed.setOnClickListener {
-            clickInterface.changeColor(1)
-        }
-        binding.btnBlack.setOnClickListener {
-            clickInterface.changeColor(2)
-        }
-        binding.btnOffWhite.setOnClickListener {
-            clickInterface.changeColor(3)
-        }
-        binding.btnblue.setOnClickListener {
-            clickInterface.changeColor(4)
-        }
+        navController = findNavController(R.id.NavHost)
     }
 }
