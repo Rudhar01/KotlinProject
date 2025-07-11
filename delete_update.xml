@@ -42,11 +42,24 @@
         android:layout_margin="10sp"
         />
 
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="horizontal">
+
     <Button
         android:id="@+id/BtnSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save"
-        android:layout_gravity="center"
-        android:layout_margin="10sp"/>
+        android:layout_marginStart="60sp"
+       />
+
+    <Button
+        android:id="@+id/BtnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:layout_marginStart="100sp"/>
+   </LinearLayout>
 </LinearLayout>
