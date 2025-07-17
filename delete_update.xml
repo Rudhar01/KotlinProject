@@ -19,47 +19,48 @@
         android:id="@+id/HintName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Your Name"
+        android:hint="Enter Item Name"
         android:gravity="center"
         android:layout_margin="10sp"
         />
 
     <EditText
-        android:id="@+id/HintContact"
+        android:id="@+id/HintPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Your contact Number"
+        android:hint="Enter price of item"
         android:gravity="center"
         android:layout_margin="10sp"
         />
 
-    <EditText
-        android:id="@+id/HintAge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Your Age"
-        android:gravity="center"
-        android:layout_margin="10sp"
-        />
+<!--    <EditText-->
+<!--        android:id="@+id/HintAge"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Enter Your Age"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_margin="10sp"-->
+<!--        />-->
 
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:orientation="horizontal">
+<!--   <LinearLayout-->
+<!--       android:layout_width="match_parent"-->
+<!--       android:layout_height="match_parent"-->
+<!--       android:orientation="horizontal">-->
 
     <Button
         android:id="@+id/BtnSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save"
-        android:layout_marginStart="60sp"
+        android:layout_gravity="center"
+
        />
 
-    <Button
-        android:id="@+id/BtnDelete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Delete"
-        android:layout_marginStart="100sp"/>
-   </LinearLayout>
+<!--    <Button-->
+<!--        android:id="@+id/BtnDelete"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Delete"-->
+<!--        android:layout_marginStart="100sp"/>-->
+<!--   </LinearLayout>-->
 </LinearLayout>

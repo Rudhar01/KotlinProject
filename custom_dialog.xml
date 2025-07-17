@@ -2,13 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/AddData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Data"
+        android:text="Add Item"
         android:textStyle="bold"
         android:textSize="20sp"
         android:layout_marginTop="20sp"
@@ -19,34 +19,34 @@
         android:id="@+id/HintName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Your Name"
+        android:hint="Enter Item Name"
         android:gravity="center"
         android:layout_margin="10sp"
         />
 
     <EditText
-        android:id="@+id/HintContact"
+        android:id="@+id/HintPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Your contact Number"
+        android:hint="Enter Item Price"
         android:gravity="center"
         android:layout_margin="10sp"
         />
 
-    <EditText
-        android:id="@+id/HintAge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Your Age"
-        android:gravity="center"
-        android:layout_margin="10sp"
-        />
+<!--    <EditText-->
+<!--        android:id="@+id/HintAge"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Enter Your Age"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_margin="10sp"-->
+<!--        />-->
 
     <Button
-        android:id="@+id/BtnSave"
+        android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save"
+        android:text="Add"
         android:layout_gravity="center"
         android:layout_margin="10sp"/>
 </LinearLayout>
