@@ -7,9 +7,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Spinner
+import android.widget.Toast
 import com.example.kotlinproject.R
 import com.example.kotlinproject.databinding.FragmentCustomizeBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -31,8 +34,9 @@ class CustomizeFragment : Fragment() {
     private var param2: String? = null
     lateinit var viewList: ListView1
     lateinit var binding: FragmentCustomizeBinding
-    var array = arrayListOf<MyData>()
-    lateinit var myAdapter: CustomAdapter
+    var array = arrayListOf<String>()
+    lateinit var myAdapter: ArrayAdapter<String>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewList = activity as ListView1
@@ -47,61 +51,85 @@ class CustomizeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentCustomizeBinding.inflate(layoutInflater)
-        array?.add(MyData("Raj", "3546323432"))
-        array?.add(MyData("Rahul", "3546323431"))
-        array?.add(MyData("Rakshit", "3546323433"))
-        myAdapter = CustomAdapter(array)
+        array?.add("Raj")
+        array?.add("Rahul")
+        array?.add("Rakshit")
+
+
+
+        myAdapter = ArrayAdapter(viewList,android.R.layout.simple_list_item_1,array)
         binding.lvList1.adapter = myAdapter
-        fun save(position: Int = -1) {
-            var dialog = BottomSheetDialog(viewList)
-            dialog.setContentView(R.layout.custom_dialog)
-            dialog.window?.setLayout(
-                android.app.ActionBar.LayoutParams.MATCH_PARENT,
-                android.app.ActionBar.LayoutParams.MATCH_PARENT
-            )
-            dialog.show()
-            var name = dialog.findViewById<EditText>(R.id.HintName)
-            var contact = dialog.findViewById<EditText>(R.id.HintContact)
-            var save = dialog.findViewById<Button>(R.id.BtnSave)
-            save?.setOnClickListener {
-                if (name?.text!!.isEmpty()) {
-                    name?.error = "Enter your name"
-                } else if (contact?.text!!.isEmpty()) {
-                    contact?.error = "Enter your contact number"
-                } else {
 
-                    if (position == -1) {
-                        array.add(MyData(name.text.toString(), contact.text.toString()))
-                        myAdapter.notifyDataSetChanged()
-                        dialog.dismiss()
+     binding.lvList1.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+         override fun onItemSelected(
+             parent: AdapterView<*>?,
+             view: View?,
+             position: Int,
+             id: Long
+         ) {
+             Toast.makeText(requireContext(),"${array[position]}", Toast.LENGTH_SHORT).show()
+         }
 
-                    } else {
-                        array.set(position, MyData(name.text.toString(), contact.text.toString()))
-                        myAdapter.notifyDataSetChanged()
-                        dialog.dismiss()
-                    }
-                }
-            }
-        }
+         override fun onNothingSelected(parent: AdapterView<*>?) {
+             TODO("Not yet implemented")
+         }
+
+     }
+
+
+
+
+
+
 
         binding.newBtnFab.setOnClickListener {
             save(-1)
         }
 
-
-        binding.lvList1.setOnItemClickListener { parent, view, position, id ->
-            save(position)
-            return@setOnItemClickListener
-        }
+//
+//        binding.lvList1.setOnItemClickListener { parent, view, position, id ->
+//            save(position)
+//            return@setOnItemClickListener
+       // }
 
         // Inflate the layout for this fragment
 
-        binding.lvList1.setOnItemLongClickListener { parent, view, position, id ->
-            array.removeAt(position)
-            myAdapter.notifyDataSetChanged()
-            return@setOnItemLongClickListener true
-        }
+//        binding.lvList1.setOnItemLongClickListener { parent, view, position, id ->
+//            array.removeAt(position)
+//            myAdapter.notifyDataSetChanged()
+//            return@setOnItemLongClickListener true
+//        }
         return binding.root
+    }
+
+    fun save(position: Int = -1) {
+        var dialog = BottomSheetDialog(viewList)
+        dialog.setContentView(R.layout.custom_dialog)
+        dialog.window?.setLayout(
+            android.app.ActionBar.LayoutParams.MATCH_PARENT,
+            android.app.ActionBar.LayoutParams.MATCH_PARENT
+        )
+        dialog.show()
+        var name = dialog.findViewById<EditText>(R.id.HintName)
+        var save = dialog.findViewById<Button>(R.id.BtnSave)
+
+        save?.setOnClickListener {
+            if (name?.text!!.isEmpty()) {
+                name?.error = "Enter your name"
+            } else {
+
+                if (position == -1) {
+                    array.add(name.text.toString())
+                    myAdapter.notifyDataSetChanged()
+                    dialog.dismiss()
+
+                } else {
+                    array[position] =  name.text.toString()
+                    myAdapter.notifyDataSetChanged()
+                    dialog.dismiss()
+                }
+            }
+        }
     }
 
     companion object {
