@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/new_graph.xml"
+    app:startDestination="@id/galleryPickerFragment">
+
+    <fragment
+        android:id="@+id/customizeFragment"
+        android:name="com.example.kotlinproject.ViewList.CustomizeFragment"
+        android:label="fragment_customize"
+        tools:layout="@layout/fragment_customize" />
+    <fragment
+        android:id="@+id/testFragment1"
+        android:name="com.example.kotlinproject.BottomNavigation.TestFragment1"
+        android:label="fragment_test1"
+        tools:layout="@layout/fragment_test1" />
+    <fragment
+        android:id="@+id/testFragment2"
+        android:name="com.example.kotlinproject.BottomNavigation.TestFragment2"
+        android:label="fragment_test2"
+        tools:layout="@layout/fragment_test2" />
+    <fragment
+        android:id="@+id/galleryPickerFragment"
+        android:name="com.example.kotlinproject.BottomNavigation.GalleryPickerFragment"
+        android:label="fragment_gallery_picker"
+        tools:layout="@layout/fragment_gallery_picker" />
+</navigation>
